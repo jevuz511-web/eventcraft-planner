@@ -38,7 +38,7 @@ describe('server bootstrap', () => {
     const line = await firstLine(child);
     assert.deepEqual(JSON.parse(line), {
       severity: 'INFO',
-      message: `Celebrate is listening on http://localhost:${port}`,
+      message: `EventCraft is listening on http://localhost:${port}`,
     });
     assert.equal(line.includes(KEY), false);
 

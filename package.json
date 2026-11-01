@@ -10,13 +10,13 @@
     "accessibility",
     "wcag"
   ],
-  "homepage": "https://eventcraft.azurecontainerapps.io",
+  "homepage": "https://eventcraft.greenmeadow-4e76982d.centralindia.azurecontainerapps.io",
   "bugs": {
-    "url": "https://github.com/jevuz/eventcraft-planner/issues"
+    "url": "https://github.com/jevuz511-web/eventcraft-planner/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jevuz/eventcraft-planner.git"
+    "url": "git+https://github.com/jevuz511-web/eventcraft-planner.git"
   },
   "license": "MIT",
   "author": "Jevuz",

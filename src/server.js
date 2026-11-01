@@ -37,7 +37,7 @@ const serverInstance = serve(
   ({ port }) => {
     applicationLogger({
       severity: 'INFO',
-      message: `Celebrate is listening on http://localhost:${port}`,
+      message: `EventCraft is listening on http://localhost:${port}`,
     });
   },
 );

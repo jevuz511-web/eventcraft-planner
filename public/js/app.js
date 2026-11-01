@@ -106,7 +106,7 @@ export function initApp() {
 
     renderPlan(resultsRegion, current);
     undoActionButton.hidden = !previous;
-    document.title = `${current.plan.title} · Celebrate`;
+    document.title = `${current.plan.title} · EventCraft`;
 
     if (!shouldFocusPlan) return;
     byId(document, 'plan-title').focus({ preventScroll: true });

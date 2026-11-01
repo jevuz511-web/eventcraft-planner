@@ -7,7 +7,7 @@ import { brotliDecompressSync, gunzipSync } from 'node:zlib';
 import { Hono } from 'hono';
 import { loadAssets, serveAssets } from '../src/infra/asset-store.js';
 
-const dir = mkdtempSync(join(tmpdir(), 'celebrate-assets-'));
+const dir = mkdtempSync(join(tmpdir(), 'eventcraft-assets-'));
 mkdirSync(join(dir, 'js'));
 writeFileSync(
   join(dir, 'index.html'),
@@ -51,7 +51,7 @@ describe('loadAssets', () => {
   });
 
   it('fails fast when there is no page to serve', () => {
-    const empty = mkdtempSync(join(tmpdir(), 'celebrate-empty-'));
+    const empty = mkdtempSync(join(tmpdir(), 'eventcraft-empty-'));
     try {
       assert.throws(() => loadAssets(empty), /No index.html to serve/);
     } finally {

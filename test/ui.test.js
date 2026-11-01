@@ -9,7 +9,7 @@ import { finalizePlan } from '../src/domain/scheduler.js';
 import { aiPlan, validEvent } from './helpers.js';
 
 const HTML = await readFile(new URL('../public/index.html', import.meta.url), 'utf8');
-const STORAGE_KEY = 'celebrate.plan.v2';
+const STORAGE_KEY = 'eventcraft.plan.v1';
 const AXE_TAGS = [
   'wcag2a',
   'wcag2aa',
@@ -195,7 +195,7 @@ describe('planning form', () => {
     assert.equal(scrollIntoView.mock.calls[0].this, $('#results'));
     assert.equal($('#plan-form [role="status"]').textContent, 'Your plan is ready.');
     assert.equal($('#plan-title').textContent, 'Garden Glow 30th');
-    assert.equal(window.document.title, 'Garden Glow 30th · Celebrate');
+    assert.equal(window.document.title, 'Garden Glow 30th · EventCraft');
     assert.equal($('[data-action="undo"]').hidden, true, 'nothing to undo for a first plan');
     assert.equal($('#plan-title span').lang, 'hi', 'AI text is marked with its language');
     assert.equal($('#results').dataset.type, 'wedding', 'selects the event sticker');
@@ -513,7 +513,7 @@ describe('saved plan', () => {
     assert.equal($('#results').hidden, true);
     assert.equal(localStorage.getItem(STORAGE_KEY), null);
     assert.equal(window.document.activeElement, $('#plan-form input'));
-    assert.equal(window.document.title, 'Celebrate · AI event planner');
+    assert.equal(window.document.title, 'EventCraft · AI celebration planner');
 
     $('[data-action="calendar"]').click(); // Hidden actions do nothing once the plan is gone.
     assert.equal(createObjectURL.mock.callCount(), 1);

@@ -3,6 +3,8 @@
 > **PromptWars · Challenge 5: Celebration & Event Planner**
 >
 > Enterprise-grade event architecture powered by Google Gemini.
+>
+> **Live demo:** <https://eventcraft.greenmeadow-4e76982d.centralindia.azurecontainerapps.io>
 
 EventCraft transforms core details about any celebration—weddings, milestone birthdays, community gatherings, or custom festivities—into a comprehensive, realistic plan: a **deterministic budget allocation**, a **chronological milestone timeline**, a **prioritized vendor checklist**, and **curated creative themes**. Powered by Google Gemini with strict structured output and multi-turn conversational refinement.
 

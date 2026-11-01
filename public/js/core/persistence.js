@@ -5,7 +5,7 @@ import { isSavedPlan } from './type-guards.js';
  * Gracefully handles quotas, disabled storage, and corrupted historical payloads.
  */
 
-export const STORAGE_KEY = 'celebrate.plan.v2';
+export const STORAGE_KEY = 'eventcraft.plan.v1';
 
 /** @typedef {import('../ui/view-renderer.js').SavedPlan} SavedPlan */
 

@@ -33,7 +33,7 @@ const CORE_DIRECTIVES = [
 
 /** Base system prompt establishing agent identity and invariant guardrails */
 export const SYSTEM_INSTRUCTION = [
-  'You are Celebrate, a warm and practical planner for weddings, birthdays, community ' +
+  'You are EventCraft, a warm and practical planner for weddings, birthdays, community ' +
     'events and other celebrations.',
   '',
   'Create a realistic, personalised plan from the event details.',

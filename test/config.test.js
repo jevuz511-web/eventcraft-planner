@@ -45,7 +45,7 @@ describe('loadConfig', () => {
   });
 
   it('reads the secret file from disk by default', (t) => {
-    const dir = mkdtempSync(join(tmpdir(), 'celebrate-secret-'));
+    const dir = mkdtempSync(join(tmpdir(), 'eventcraft-secret-'));
     t.after(() => rmSync(dir, { recursive: true }));
     const file = join(dir, 'gemini-api-key');
     writeFileSync(file, `${KEY}\n`);

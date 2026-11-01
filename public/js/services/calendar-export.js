@@ -71,11 +71,11 @@ export function buildIcs({ event, plan }, clock = new Date()) {
   const structuralLines = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Celebrate//AI Event Planner//EN',
+    'PRODID:-//EventCraft//AI Celebration Planner//EN',
     'CALSCALE:GREGORIAN',
     ...calendarEvents.flatMap(([targetDate, titleSummary], idx) => [
       'BEGIN:VEVENT',
-      `UID:${timestampString}-${idx}@celebrate.planner`,
+      `UID:${timestampString}-${idx}@eventcraft.planner`,
       `DTSTAMP:${timestampString}`,
       `DTSTART;VALUE=DATE:${targetDate.replaceAll('-', '')}`,
       `SUMMARY:${escapeCalendarText(titleSummary)}`,

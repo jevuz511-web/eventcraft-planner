@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Celebrate · AI event planner</title>
-  <meta name="description" content="Plan weddings, birthdays and community events with Google Gemini: budget splits, timelines, vendor checklists and personalised ideas.">
+  <title>EventCraft · AI celebration planner</title>
+  <meta name="description" content="EventCraft plans weddings, birthdays and community events with Google Gemini: a budget that adds up, a dated timeline, a vendor checklist and ideas made for your guests.">
   <meta name="color-scheme" content="light dark">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
@@ -22,31 +22,41 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header class="hero bright">
-    <div class="wrap">
-      <div class="hero-top">
-        <p class="brand"><span class="brand-mark" aria-hidden="true">🎉</span> Celebrate</p>
-        <p class="sticker">Powered by Google Gemini</p>
-      </div>
-      <h1>Plan the party, <span class="highlight">not the panic.</span></h1>
-      <p class="lede">Your <abbr title="artificial intelligence">AI</abbr> planning partner for weddings, birthdays and community events. Share the essentials and get a budget, timeline, vendor checklist and ideas in seconds.</p>
+  <header class="masthead">
+    <div class="wrap masthead-bar">
+      <p class="brand"><span class="monogram" aria-hidden="true">E</span> EventCraft</p>
+      <p class="powered">Built with Google Gemini</p>
+    </div>
+    <div class="wrap hero">
+      <p class="eyebrow">Your <abbr title="artificial intelligence">AI</abbr> celebration atelier</p>
+      <h1>Every celebration, <em>beautifully orchestrated.</em></h1>
+      <p class="lede">Weddings, birthdays and community events, planned in seconds. Describe the occasion and EventCraft drafts a budget that adds up, a dated timeline, a vendor checklist and ideas made for your guests.</p>
+      <ul class="hero-points" aria-label="What every plan includes">
+        <li>Budget to the last rupee</li>
+        <li>Dated timeline</li>
+        <li>Vendor checklist</li>
+        <li>Personal ideas</li>
+      </ul>
     </div>
   </header>
 
-  <main id="main" class="wrap layout" tabindex="-1">
-    <section id="planner" class="card" aria-labelledby="planner-heading">
-      <h2 id="planner-heading">Tell us about your event</h2>
-      <p class="hint">All fields are required unless marked optional.</p>
-      <noscript><p class="alert bright">Celebrate needs JavaScript to create plans. Please enable it and reload the page.</p></noscript>
+  <main id="main" class="wrap studio" tabindex="-1">
+    <section id="planner" class="panel brief" aria-labelledby="planner-heading">
+      <div class="panel-heading">
+        <p class="step" aria-hidden="true">Step 1</p>
+        <h2 id="planner-heading">Your event brief</h2>
+        <p class="hint">All fields are required unless marked optional.</p>
+      </div>
+      <noscript><p class="alert">EventCraft needs JavaScript to create plans. Please enable it and reload the page.</p></noscript>
 
       <form id="plan-form" method="post" novalidate>
-        <fieldset>
-          <legend>What are you celebrating?</legend>
+        <fieldset class="occasion">
+          <legend>What is the occasion?</legend>
           <div class="choices">
-            <label class="choice"><input type="radio" name="type" value="wedding" checked> <span aria-hidden="true">💍</span> Wedding</label>
-            <label class="choice"><input type="radio" name="type" value="birthday"> <span aria-hidden="true">🎂</span> Birthday</label>
-            <label class="choice"><input type="radio" name="type" value="community"> <span aria-hidden="true">🤝</span> Community event</label>
-            <label class="choice"><input type="radio" name="type" value="other"> <span aria-hidden="true">✨</span> Other celebration</label>
+            <label class="choice"><input type="radio" name="type" value="wedding" checked> Wedding</label>
+            <label class="choice"><input type="radio" name="type" value="birthday"> Birthday</label>
+            <label class="choice"><input type="radio" name="type" value="community"> Community event</label>
+            <label class="choice"><input type="radio" name="type" value="other"> Other celebration</label>
           </div>
         </fieldset>
 
@@ -98,7 +108,7 @@
           <p class="field-error" id="location-error"></p>
         </div>
 
-        <div class="field">
+        <div class="field wide">
           <label for="preferences">Theme, style and must-haves <span class="label-note">(optional)</span></label>
           <textarea id="preferences" name="preferences" rows="3" maxlength="600" aria-describedby="preferences-hint"></textarea>
           <p class="hint" id="preferences-hint">Who it is for (such as their age and interests), vibe, traditions, dietary or accessibility needs, what is already booked and things to avoid.</p>
@@ -117,30 +127,34 @@
           <p class="hint" id="language-hint">Gemini writes your plan in this language. The page itself stays in English.</p>
         </div>
 
-        <button type="submit" class="primary">Create my plan <span aria-hidden="true">→</span></button>
-        <p class="status" role="status"></p>
-        <p class="alert" role="alert"></p>
+        <div class="submit-row">
+          <button type="submit" class="primary">Craft my plan</button>
+          <p class="status" role="status"></p>
+          <p class="alert" role="alert"></p>
+        </div>
       </form>
     </section>
 
     <div class="board">
-      <section id="empty-state" class="card empty" aria-labelledby="empty-heading">
+      <section id="empty-state" class="panel empty" aria-labelledby="empty-heading">
+        <p class="step" aria-hidden="true">Step 2</p>
         <h2 id="empty-heading">Your plan will appear here</h2>
-        <p>Fill in the form and Gemini builds a plan you can refine, tick off and add to your calendar.</p>
+        <p>Share the brief and Gemini drafts a plan you can refine, tick off and add to your calendar.</p>
         <ul class="previews">
-          <li class="bright"><span class="preview-icon" aria-hidden="true">💸</span><strong>Budget split</strong> Exact amounts per category that add up to your total.</li>
-          <li class="bright"><span class="preview-icon" aria-hidden="true">🗓️</span><strong>Timeline</strong> Tasks with real dates, counted back from your event, to tick off as you go.</li>
-          <li class="bright"><span class="preview-icon" aria-hidden="true">✅</span><strong>Vendor checklist</strong> Who to book, by when, and what to ask.</li>
-          <li class="bright"><span class="preview-icon" aria-hidden="true">💡</span><strong>Ideas</strong> Themes, food and activities made for your guests.</li>
+          <li><span class="numeral" aria-hidden="true">01</span><strong>Budget</strong> Exact amounts per category that add up to your total.</li>
+          <li><span class="numeral" aria-hidden="true">02</span><strong>Timeline</strong> Tasks with real dates, counted back from your event, to tick off as you go.</li>
+          <li><span class="numeral" aria-hidden="true">03</span><strong>Vendors</strong> Who to book, by when, and what to ask.</li>
+          <li><span class="numeral" aria-hidden="true">04</span><strong>Ideas</strong> Themes, food and activities made for your guests.</li>
         </ul>
       </section>
 
       <section id="results" aria-labelledby="plan-title" hidden>
-        <div class="card plan-header bright">
-          <span class="type-sticker" aria-hidden="true"></span>
-          <p class="eyebrow">Your celebration plan</p>
-          <h2 id="plan-title" tabindex="-1">Your plan</h2>
-          <p id="plan-summary"></p>
+        <div class="panel dossier">
+          <div class="dossier-intro">
+            <p class="eyebrow">Celebration dossier <span class="type-mark" aria-hidden="true"></span></p>
+            <h2 id="plan-title" tabindex="-1">Your plan</h2>
+            <p id="plan-summary"></p>
+          </div>
           <dl class="facts">
             <div><dt>When</dt><dd id="fact-date"></dd></div>
             <div><dt>Guests</dt><dd id="fact-guests"></dd></div>
@@ -157,16 +171,16 @@
             </ul>
           </nav>
           <div class="actions">
-            <button type="button" data-action="calendar" aria-describedby="calendar-hint"><span aria-hidden="true">📅</span> Download calendar file (.ics)</button>
-            <button type="button" data-action="print"><span aria-hidden="true">🖨️</span> Print or save as <abbr title="Portable Document Format">PDF</abbr></button>
+            <button type="button" data-action="calendar" aria-describedby="calendar-hint">Download calendar file (.ics)</button>
+            <button type="button" data-action="print">Print or save as <abbr title="Portable Document Format">PDF</abbr></button>
             <button type="button" data-action="undo" hidden>Undo last change</button>
             <button type="button" data-action="reset">Start over</button>
           </div>
           <p class="hint" id="calendar-hint">The calendar file adds every task and booking date to Google Calendar, Outlook or Apple Calendar.</p>
         </div>
 
-        <section id="budget" class="card" aria-labelledby="budget-heading">
-          <h3 id="budget-heading" class="section-title bright"><span aria-hidden="true">💸</span> Budget</h3>
+        <section id="budget" class="panel" aria-labelledby="budget-heading">
+          <h3 id="budget-heading" class="section-title"><span class="numeral" aria-hidden="true">01</span> Budget</h3>
           <!-- biome-ignore lint/a11y/noNoninteractiveTabindex: a data table may scroll sideways at large text sizes (WCAG 1.4.10), so keyboard users must be able to focus and scroll the region. -->
           <section class="table-scroll" aria-labelledby="budget-caption" tabindex="0">
             <table>
@@ -190,25 +204,25 @@
           </section>
         </section>
 
-        <section id="timeline" class="card" aria-labelledby="timeline-heading">
-          <h3 id="timeline-heading" class="section-title bright"><span aria-hidden="true">🗓️</span> Timeline</h3>
+        <section id="timeline" class="panel" aria-labelledby="timeline-heading">
+          <h3 id="timeline-heading" class="section-title"><span class="numeral" aria-hidden="true">02</span> Timeline</h3>
           <p id="task-progress" class="progress" aria-live="polite"></p>
           <ol id="timeline-list" class="timeline"></ol>
         </section>
 
-        <section id="vendors" class="card" aria-labelledby="vendors-heading">
-          <h3 id="vendors-heading" class="section-title bright"><span aria-hidden="true">✅</span> Vendor checklist</h3>
+        <section id="vendors" class="panel" aria-labelledby="vendors-heading">
+          <h3 id="vendors-heading" class="section-title"><span class="numeral" aria-hidden="true">03</span> Vendor checklist</h3>
           <p id="vendor-progress" class="progress" aria-live="polite"></p>
           <ul id="vendor-list" class="checklist"></ul>
         </section>
 
-        <section id="ideas" class="card" aria-labelledby="ideas-heading">
-          <h3 id="ideas-heading" class="section-title bright"><span aria-hidden="true">💡</span> Personalised ideas</h3>
+        <section id="ideas" class="panel" aria-labelledby="ideas-heading">
+          <h3 id="ideas-heading" class="section-title"><span class="numeral" aria-hidden="true">04</span> Personalised ideas</h3>
           <ul id="idea-list" class="ideas"></ul>
         </section>
 
-        <section id="refine" class="card" aria-labelledby="refine-heading">
-          <h3 id="refine-heading" class="section-title bright"><span aria-hidden="true">✨</span> Refine with <abbr title="artificial intelligence">AI</abbr></h3>
+        <section id="refine" class="panel" aria-labelledby="refine-heading">
+          <h3 id="refine-heading" class="section-title"><span class="numeral" aria-hidden="true">05</span> Refine with <abbr title="artificial intelligence">AI</abbr></h3>
           <form id="refine-form" method="post" novalidate>
             <div class="field">
               <label for="feedback">What should change?</label>
@@ -216,9 +230,11 @@
               <p class="hint" id="feedback-hint">For example “cut costs by 20%”, “make it eco-friendly” or “add a vegetarian menu”.</p>
               <p class="field-error" id="feedback-error"></p>
             </div>
-            <button type="submit" class="primary">Update my plan <span aria-hidden="true">→</span></button>
-            <p class="status" role="status"></p>
-            <p class="alert" role="alert"></p>
+            <div class="submit-row">
+              <button type="submit" class="primary">Update my plan</button>
+              <p class="status" role="status"></p>
+              <p class="alert" role="alert"></p>
+            </div>
           </form>
         </section>
       </section>
@@ -227,10 +243,11 @@
 
   <footer class="site-footer">
     <div class="wrap">
+      <p class="footer-brand"><span class="monogram" aria-hidden="true">E</span> EventCraft</p>
       <section class="glossary" aria-labelledby="glossary-heading">
         <h2 id="glossary-heading">Words used on this page</h2>
         <dl>
-          <div><dt><abbr title="artificial intelligence">AI</abbr></dt><dd>Artificial intelligence. Celebrate uses Google Gemini, an AI model, to write your plan.</dd></div>
+          <div><dt><abbr title="artificial intelligence">AI</abbr></dt><dd>Artificial intelligence. EventCraft uses Google Gemini, an AI model, to write your plan.</dd></div>
           <div><dt>Vendor</dt><dd>A business or person you hire for the event, such as a caterer, photographer or venue.</dd></div>
           <div><dt>Calendar file (.ics)</dt><dd>A file that adds your plan’s dates to Google Calendar, Outlook or Apple Calendar when you open it.</dd></div>
           <div><dt><abbr title="Portable Document Format">PDF</abbr></dt><dd>Portable Document Format: a file you can print or share that looks the same on every device.</dd></div>
