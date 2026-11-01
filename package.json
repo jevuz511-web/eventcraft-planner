@@ -1,0 +1,52 @@
+{
+  "name": "eventcraft-planner",
+  "version": "1.0.0",
+  "description": "Enterprise GenAI planning assistant for weddings, birthdays and community events: deterministic budgets, milestone timelines, priority vendor management and creative themes, powered by Google Gemini.",
+  "keywords": [
+    "event-planner",
+    "generative-ai",
+    "gemini",
+    "hono",
+    "accessibility",
+    "wcag"
+  ],
+  "homepage": "https://eventcraft.azurecontainerapps.io",
+  "bugs": {
+    "url": "https://github.com/jevuz/eventcraft-planner/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jevuz/eventcraft-planner.git"
+  },
+  "license": "MIT",
+  "author": "Jevuz",
+  "private": true,
+  "type": "module",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch --env-file-if-exists=.env src/server.js",
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "typecheck": "tsc -p .",
+    "test": "node --test --disable-warning=ExperimentalWarning --experimental-test-coverage --test-coverage-include=\"src/**\" --test-coverage-include=\"public/**\" --test-coverage-lines=100 --test-coverage-branches=100 --test-coverage-functions=100 \"test/**/*.test.js\"",
+    "eval": "node --env-file-if-exists=.env --test test/gemini.eval.js",
+    "check": "npm run lint && npm run typecheck && npm test"
+  },
+  "dependencies": {
+    "@google/genai": "2.32.0",
+    "@hono/node-server": "2.1.5",
+    "hono": "4.13.16",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.4",
+    "@types/node": "22.20.5",
+    "axe-core": "4.14.0",
+    "jsdom": "29.1.1",
+    "typescript": "7.0.2"
+  }
+}

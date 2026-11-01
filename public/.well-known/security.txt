@@ -1,0 +1,5 @@
+Contact: https://github.com/jevuz/eventcraft-planner/security/advisories/new
+Expires: 2027-10-31T23:59:59.000Z
+Preferred-Languages: en
+Policy: https://github.com/jevuz/eventcraft-planner/blob/main/SECURITY.md
+Canonical: https://eventcraft.azurecontainerapps.io/.well-known/security.txt
